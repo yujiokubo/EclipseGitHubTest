@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Careership Report Site</title>
+
+    <!-- ファイル読み込み -->
+    <link rel="stylesheet" type="text/css" href="./lwframe.css">
+    <script type="text/javascript" src="./js/config.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="./js/md5.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="./js/moment.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="./js/lwmlib.js" charset="UTF-8"></script>
+</head>
+<body class="lw-font">
+
+    <!-- header -->
+    <div class="lw-title-line"><span class="lw-title">Careership Report Site</span></div>
+
+    <!-- side -->
+    <div class="lw-side-menuframe">
+      <div class="lw-side-menu">
+
+        <!-- 以下、追加したメニュー -->
+        <div class="lw-menu" onClick="javascript:lw.submenuctl('submenu1');"><span class="lw-menu-item">利用状況を知りたい</span></div>
+        <div id="submenu1" class="lw-submenu">
+          <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='LoginNum.html';">- ログイン数の推移 -</p>
+          <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='LoginDevice.html';">- 利用ブラウザの推移 -</p>
+          <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='LoginDevice2.html';">- 利用ブラウザと端末の推移 -</p>
+        </div>
+        <div class="lw-menu" onClick="javascript:lw.submenuctl('submenu2');"><span class="lw-menu-item">契約に関する情報を知りたい</span></div>
+        <div id="submenu2" class="lw-submenu">
+          <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='ItemNum1.html';">- 【LW社内】アイテム数(eラーニング）ランキング -</p>
+          <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='ItemNum2.html';">- アイテム数(eラーニング）の推移 -</p>
+          <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='RegistedUserNum1.html';">- 登録ユーザ数(有効ID数、無効ID数)の遷移1 -</p>
+          <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='RegistedUserNum2.html';">- 登録ユーザ数(有効ID数、無効ID数)の遷移2 -</p>
+          <!--
+          <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='LoginDevice.html';">- データ登録容量の推移 -</p>
+          -->
+        </div>
+        <div class="lw-menu" onClick="javascript:lw.submenuctl('submenu3');"><span class="lw-menu-item">受講状況、進捗率を知りたい</span></div>
+        <div id="submenu3" class="lw-submenu">
+          <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='AttendLectureRate1.html';">- 受講の修了率1(円) -</p>
+          <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='AttendLectureRate2.html';">- 受講の修了率2(メーター) -</p>
+          <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='AttendLectureRate3.html';">- 受講の修了率3(地図) -</p>
+        </div>
+
+
+<!--         <div class="lw-menu" onClick="javascript:lw.submenuctl('submenuX');"><span class="lw-menu-item">■■■■■■■■■■■■■</span></div> -->
+
+
+<!--         以下、オリジナルのメニュー -->
+<!--         <div class="lw-menu" onClick="javascript:lw.submenuctl('submenua');"><span class="lw-menu-item">eラーニング</span></div> -->
+<!--         <div id="submenua" class="lw-submenu"> -->
+<!--           <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='main.html';">- 組織別進捗 -</p> -->
+<!--           <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='regionmap.html';">- 組織×地域別進捗</p> -->
+<!--           <p class="lw-submenu-item" onClick="javascript:document.getElementById('isrc').src='bwcontent.html';">- 教材別進捗 -</p> -->
+<!--         </div> -->
+<!--         <div class="lw-menu" onClick="javascript:lw.submenuctl('submenub');"><span class="lw-menu-name">集合研修</span></div> -->
+<!--         <div id="submenub" class="lw-submenu"> -->
+<!--           <p class="lw-submenu-item">- 組織別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- グループ別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- 組織×地域別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- 教材別進捗 -</p> -->
+<!--         </div> -->
+<!--         <div class="lw-menu" onClick="javascript:lw.submenuctl('submenuc');"><span class="lw-menu-name">アンケート/レポート</span></div> -->
+<!--         <div id="submenuc" class="lw-submenu"> -->
+<!--           <p class="lw-submenu-item">- 組織別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- グループ別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- 組織×地域別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- 教材別進捗 -</p> -->
+<!--         </div> -->
+<!--         <div class="lw-menu" onClick="javascript:lw.submenuctl('submenud');"><span class="lw-menu-name">コース</span></div> -->
+<!--         <div id="submenud" class="lw-submenu"> -->
+<!--           <p class="lw-submenu-item">- 組織別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- グループ別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- 組織×地域別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- 教材別進捗 -</p> -->
+<!--         </div> -->
+<!--         <div class="lw-menu" onClick="javascript:lw.submenuctl('submenue');"><span class="lw-menu-name">スキル</span></div> -->
+<!--         <div id="submenue" class="lw-submenu"> -->
+<!--           <p class="lw-submenu-item">- 組織別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- グループ別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- 組織×地域別進捗 -</p> -->
+<!--           <p class="lw-submenu-item">- 教材別進捗 -</p> -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- main -->
+    <div class="lw-menuframe">
+        <iframe id="isrc" frameborder=0 scrolling=auto src="LoginNum.html"></iframe>
+    </div>
+
+    <!-- loading -->
+
+        <script>lw.getbwlog();</script>
+
+</body>
+</html>
